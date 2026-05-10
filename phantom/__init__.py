@@ -17,7 +17,7 @@ Architecture:
 Five packages. One flow. Zero plaintext in transit.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.1"
 __author__ = "J. van de Meent, Root AI"
 
 from phantom.seal import PhantomSealer
@@ -26,6 +26,11 @@ from phantom.transport import PhantomTransport
 from phantom.materialize import PhantomMaterializer
 from phantom.decode import PhantomDecoder
 from phantom.orchestrator import PhantomFlow
+
+# phantom.icc is the ICC bridge (Identity-Bound Continuity Container).
+# Importing it requires tibet-drop on sys.path or installed via the
+# [icc] extra. Defensive: not auto-imported here, only available via
+# explicit `from phantom import icc` when tibet-drop is present.
 
 __all__ = [
     "PhantomSealer",

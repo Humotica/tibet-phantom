@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tibet-phantom"
-version = "0.1.0"
-description = "Zero-footprint AI materialization. Compute once on GPU, verify everywhere, materialize only with proof."
+version = "0.2.1"
+description = "Zero-footprint AI materialization + phantom.icc bridge. Compute once on GPU, verify everywhere, materialize only with proof. Sealed process-state + triage-aware fork via ICC."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
@@ -18,7 +18,7 @@ keywords = [
     "zero-trust", "phantom", "tibet", "upip", "rvp",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
@@ -40,6 +40,7 @@ full = [
     "tibet-mesh>=0.1.0",
     "tibet-overlay>=0.1.0",
     "tlex-edge>=0.1.0",
+    "tibet-drop>=0.1.0",
     "requests>=2.28.0",
 ]
 edge = [
@@ -49,6 +50,11 @@ transport = [
     "tibet-mesh>=0.1.0",
     "tibet-overlay>=0.1.0",
     "requests>=2.28.0",
+]
+# ICC bridge — Identity-Bound Continuity Container handler.
+# Requires tibet-drop for TBZ pack/verify primitives.
+icc = [
+    "tibet-drop>=0.1.0",
 ]
 
 [project.urls]
